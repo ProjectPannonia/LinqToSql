@@ -8,5 +8,18 @@
         <elementListCompartment Id="22388043-55ba-42dd-9b52-c891af7b23dc" absoluteBounds="1.5150000000000001, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="70a8dc7f-d5a1-4269-a38a-131856ef4953" absoluteBounds="4.875, 1.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LinqToSqlDataClassesDataContext/Student" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cd6d7ace-4106-4bde-b1de-5efd94496ded" absoluteBounds="4.8900000000000006, 2.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 2.34699625651042); (4.875 : 2.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDataClassesDataContext/University/University_Student" />
+      <nodes>
+        <classShapeMoniker Id="f546cbd9-8a68-4816-8d3f-47e7d66e7684" />
+        <classShapeMoniker Id="70a8dc7f-d5a1-4269-a38a-131856ef4953" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
