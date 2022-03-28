@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,28 @@ namespace LinqToSql
     /// </summary>
     public partial class MainWindow : Window
     {
+        LinqToSqlDataClassesDataContext dataContext;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            // connection string = PanjuTutotialsDbConnectionString
+            string connectionString = ConfigurationManager.ConnectionStrings["LinqToSql.Properties.Settings.PanjuTutotialsDbConnectionString"].ConnectionString;
+            dataContext = new LinqToSqlDataClassesDataContext(connectionString);
+
+            InsertUniversities();
+        }
+
+        public void InsertUniversities()
+        {
+            University yale = new University();
+            yale.Name = "Beijing Tech";
+            dataContext.Universities.InsertOnSubmit(yale);
+            
+            dataContext.SubmitChanges();
+
+            MainDataGrid.ItemsSource = dataContext.Universities;
         }
     }
 }
