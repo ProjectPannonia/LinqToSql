@@ -32,7 +32,8 @@ namespace LinqToSql
             dataContext = new LinqToSqlDataClassesDataContext(connectionString);
 
             //InsertUniversities();
-            InsertStudents();
+            //InsertStudents();
+            InsertLectures();
         }
 
         public void InsertUniversities()
@@ -68,6 +69,15 @@ namespace LinqToSql
             dataContext.SubmitChanges();
 
             MainDataGrid.ItemsSource = dataContext.Students;
+        }
+        public void InsertLectures()
+        {
+            dataContext.Lectures.InsertOnSubmit(new Lecture { Name = "Math" });
+            dataContext.Lectures.InsertOnSubmit(new Lecture { Name = "History" });
+
+            dataContext.SubmitChanges();
+
+            MainDataGrid.ItemsSource = dataContext.Lectures;
         }
     }
 }
